@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/map_img"
+    android:orientation="vertical"
+    tools:context="com.example.brandonderbidge.myapplication.Views.MapTempActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Info"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/to_game_info_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TrainYard"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/to_trainyard_button"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/turn_action_layout">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/draw_trains"
+            android:text="Draw Train Cards"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/draw_destinations"
+            android:text="Draw Destinations"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/claim_route"
+            android:text="Claim Route"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_toRightOf="@id/turn_action_layout"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Num Dest Cards"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18dp"
+            android:text="#"
+            android:id="@+id/num_dest_cards_deck_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/player_hand">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/red"
+            android:text=""
+            android:textSize="30sp"
+            android:id="@+id/red_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/orange"
+            android:text=""
+            android:textSize="30sp"
+            android:id="@+id/orange_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/yellow"
+            android:text=""
+            android:textSize="30sp"
+            android:id="@+id/yellow_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/green"
+            android:text=""
+            android:textSize="30sp"
+            android:id="@+id/green_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/blue"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:id="@+id/blue_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/purple"
+            android:text=""
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:id="@+id/purple_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/black"
+            android:text=""
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:id="@+id/black_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/white"
+            android:text=""
+            android:textSize="30sp"
+            android:id="@+id/white_count"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@color/aqua"
+            android:text=""
+            android:textSize="30sp"
+            android:id="@+id/wild_count"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/player_hand"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/destination_layout"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="275dp"
+            android:background="@color/white"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="100dp"
+            android:id="@+id/destinations_recycler_view"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="My Destinations"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/destinations_recycler_view"
+            android:id="@+id/my_destinations_button"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/player_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="vertical"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLAYERS"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/player_one"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/player_two"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/player_three"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/player_four"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/player_five"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_img" />
+
+</RelativeLayout>
